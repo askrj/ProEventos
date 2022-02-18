@@ -12,25 +12,35 @@ import { NavComponent } from './nav/nav.component';
 
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
-
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { EventoService } from './services/evento.service';
+import { DataTimeFornatPipe } from './helpers/DataTimeFornat.pipe';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
       PalestrantesComponent,
-      NavComponent
+      NavComponent,
+      DataTimeFornatPipe
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    CollapseModule,
-    FormsModule
+    FormsModule,
+    CollapseModule.forRoot(),
+    TooltipModule.forRoot(),
+    BsDropdownModule.forRoot(),
+    ModalModule.forRoot()
 
   ],
-  providers: [],
+  providers: [
+    EventoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

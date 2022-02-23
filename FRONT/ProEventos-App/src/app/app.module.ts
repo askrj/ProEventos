@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import{ HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EventosComponent } from './eventos/eventos.component';
-import { PalestrantesComponent } from './palestrantes/palestrantes.component';
-import { NavComponent } from './nav/nav.component';
+import { EventosComponent } from './componets/eventos/eventos.component';
+import { PalestrantesComponent } from './componets/palestrantes/palestrantes.component';
+import { NavComponent } from './shared/nav/nav.component';
 
 
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -18,12 +18,21 @@ import { EventoService } from './services/evento.service';
 import { DataTimeFornatPipe } from './helpers/DataTimeFornat.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { PerfilComponent } from './componets/perfil/perfil.component';
+import { DashboardComponent } from './componets/dashboard/dashboard.component';
+import { ContatosComponent } from './componets/contatos/contatos.component';
+import { TituloComponent } from './shared/titulo/titulo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EventosComponent,
       PalestrantesComponent,
+      PerfilComponent,
+      DashboardComponent,
+      ContatosComponent,
+      TituloComponent,
       NavComponent,
       DataTimeFornatPipe
    ],
@@ -44,12 +53,14 @@ import { ToastrModule } from 'ngx-toastr';
         preventDuplicates: true,
         progressBar: true
       }
-    )
+    ),
+    NgxSpinnerModule
 
   ],
   providers: [
     EventoService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule { }

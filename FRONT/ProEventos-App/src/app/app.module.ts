@@ -19,10 +19,15 @@ import { DataTimeFornatPipe } from './helpers/DataTimeFornat.pipe';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { PerfilComponent } from './componets/perfil/perfil.component';
+import { PerfilComponent } from './componets/user/perfil/perfil.component';
 import { DashboardComponent } from './componets/dashboard/dashboard.component';
 import { ContatosComponent } from './componets/contatos/contatos.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
+import { EventoDetalheComponent } from './componets/eventos/evento-detalhe/evento-detalhe.component';
+import { EventoListaComponent } from './componets/eventos/evento-lista/evento-lista.component';
+import { UserComponent } from './componets/user/user.component';
+import { LoginComponent } from './componets/user/login/login.component';
+import { RegistrarComponent } from './componets/user/registrar/registrar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,12 @@ import { TituloComponent } from './shared/titulo/titulo.component';
       ContatosComponent,
       TituloComponent,
       NavComponent,
-      DataTimeFornatPipe
+      DataTimeFornatPipe,
+      EventoDetalheComponent,
+      EventoListaComponent,
+      UserComponent,
+      LoginComponent,
+      RegistrarComponent
    ],
   imports: [
     BrowserModule,
